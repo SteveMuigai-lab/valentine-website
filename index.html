@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Will You Be My Valentine?</title>
-
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f43f5e',
+                        secondary: '#ec4899',
+                    },
+                    fontFamily: {
+                        'romantic': ['Dancing Script', 'cursive'],
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-slate-900 min-h-screen overflow-hidden relative">
+    <floating-hearts></floating-hearts>
+    
+    <main class="relative z-10 flex items-center justify-center min-h-screen p-4">
+        <valentine-card></valentine-card>
+    </main>
 
-  <div class="card">
-    <h1>Will you be my Valentine? 💕</h1>
-
-    <div class="buttons">
-      <button id="yes">Yes 💖</button>
-      <button id="no">No 😢</button>
-    </div>
-
-    <div class="love" id="love">
-      YAY!!! I knew you’d say yes 💘🥰
-    </div>
-  </div>
-
-  <!-- Link JavaScript -->
-  <script src="script.js"></script>
+    <script src="components/floating-hearts.js"></script>
+    <script src="components/valentine-card.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
 </body>
-
 </html>
