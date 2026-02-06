@@ -1,58 +1,42 @@
-body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
-.card {
-  background: white;
-  padding: 40px 50px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(244, 63, 94, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(244, 63, 94, 0.8), 0 0 60px rgba(236, 72, 153, 0.6); }
 }
 
-h1 {
-  color: #ff4d6d;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.buttons {
-  margin-bottom: 20px;
+.animate-heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
 }
 
-button {
-  font-size: 1.2rem;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.3s ease;
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
 }
 
-#yes {
-  background-color: #ff4d6d;
-  color: white;
-  margin-right: 20px;
+.gradient-text {
+    background: linear-gradient(135deg, #f43f5e 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-#yes:hover {
-  transform: scale(1.1);
-  background-color: #ff2f59;
+.glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#no {
-  background-color: #ccc;
-  color: #333;
-}
-
-.love {
-  font-size: 2rem;
-  margin-top: 20px;
-  display: none;
+.bg-animated {
+    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #0f172a);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
 }
